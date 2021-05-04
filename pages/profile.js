@@ -1,9 +1,26 @@
+
+import profileStyles from '../styles/profile.module.css'
+
+
 export const PROFILE = ({profile}) => {
+
+    console.log(profile)
+
     return(
         <div className="page-container">
-            <div>
+            <div className={profileStyles.main}>
                 <h1>My Profile</h1>
+
+                <div className={profileStyles.myProfileClass}>
+
+                    <h3>{profile.name}</h3>
+                    <h6>{profile.position}</h6>
+                    <img src={profile.image} alt="profile picture"/>
+                    <p>{profile.description}</p>
+
+                </div>
             </div>
+
         </div>
     )
 }
