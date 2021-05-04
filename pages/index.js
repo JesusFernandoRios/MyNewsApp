@@ -4,6 +4,10 @@ import styles from '../styles/Home.module.css'
 
 export default function Home() {
   return (
-    <h1>Hello World</h1>
+    <div className="page-container">
+      <div className={styles.main}>
+        <h1>Daily news to kill boredom</h1>
+      </div>
+    </div>
   )
 }
