@@ -3,6 +3,7 @@ export const Feed = ({pageNumber, articles}) => {
 
     return (
         <>
+        <h1>Feed Section</h1>
         </>
     )
 }
@@ -17,13 +18,31 @@ export const getServerSideProps = async pageContext => {
             }
         }
     }
-}
 
-const apiResponse = await fetch(
-    `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&page=${pageNumber}`,
-    {
-        headers: {
-            Authorization: `Bearer ${process.env.PUBLIC_NEWS_KEY}`
+    const apiResponse = await fetch(
+        `https://newsapi.org/v2/top-headlines?country=us&pageSize=5&page=${pageNumber}
+        `,
+        {
+            headers: {
+                Authorization: `Bearer ${process.env.PUBLIC_NEWS_KEY}`
+            }
+        }
+
+    );
+
+    const apiJson = await apiResponse.json();
+
+    const {articles} = apiJson;
+
+    return {
+        props:{
+            articles,
+            pageNumber: Number.parseInt(pageNumber)
         }
     }
-)
+
+}
+
+
+
+export default Feed;
