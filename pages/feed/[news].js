@@ -1,10 +1,18 @@
+import styles from '../../styles/posts.module.css'
 
 export const Feed = ({pageNumber, articles}) => {
 
+    console.log(pageNumber)
+    console.log(articles)
     return (
-        <>
-        <h1>Feed Section</h1>
-        </>
+        <div className={styles.main}>
+            {articles.map((article, index) => (
+                <div key={index} className={styles.post}>
+                    <h1>{article.title}</h1>
+                    <img src={article.urlToImage} alt={article.title}/>
+                </div>
+            ))}
+        </div>
     )
 }
 
