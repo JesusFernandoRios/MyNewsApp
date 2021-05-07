@@ -1,8 +1,8 @@
 
-import { Router, useRouter } from 'next/router'
+import { useRouter } from 'next/router'
 import styles from '../styles/toolbar.module.css'
 
-export const toolbar = () => {
+export const Toolbar = () => {
 
     const router = useRouter()
 

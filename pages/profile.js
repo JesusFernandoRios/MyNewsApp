@@ -1,5 +1,6 @@
 
 import profileStyles from '../styles/profile.module.css'
+import { Toolbar } from '../components/toolbar'
 
 
 export const PROFILE = ({profile}) => {
@@ -8,6 +9,9 @@ export const PROFILE = ({profile}) => {
 
     return(
         <div className="page-container">
+
+            <Toolbar/>
+
             <div className={profileStyles.main}>
                 <h1>My Profile</h1>
 
